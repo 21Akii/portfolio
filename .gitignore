@@ -5,5 +5,5 @@ out
 next-env.d.ts
 .env*.local
 # source archives dropped in for reference; not part of the site
-projects
+/projects
 .next-dev
