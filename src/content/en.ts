@@ -1,18 +1,22 @@
+import { builds } from "./automations-en";
+
 // English content. The `Content` type is derived from this file; `fr.ts` must match it exactly.
 export const en = {
   htmlLang: "en",
   meta: {
-    title: "Akram Cherbane | Full-stack & AI developer",
+    title: "Nadji & Cherbane | AI and full-stack duo",
     description:
-      "Portfolio of Akram Cherbane, a freelance full-stack and AI developer: ERP platforms for construction and fuel distribution, a fitness app, and a face recognition access system.",
-    ogDescription: "Business software built end to end: web, mobile, back office and AI.",
+      "Portfolio of Fares Nadji (AI / ML engineer) and Akram Cherbane (full-stack & AI developer): medical image segmentation, AI agents and automation, and ERP platforms for construction and fuel distribution.",
+    ogDescription: "Two engineers, one whole system: the models, and the software around them.",
   },
   nav: {
     aria: "Primary",
-    work: "Work",
+    duo: "The duo",
+    together: "Together",
+    fares: "Fares",
+    akram: "Akram",
     practice: "Practice",
-    about: "About",
-    contact: "Contact me",
+    contact: "Contact us",
     toLight: "Switch to light theme",
     toDark: "Switch to dark theme",
     switchLabel: "FR",
@@ -20,27 +24,68 @@ export const en = {
     switchHref: "/",
   },
   hero: {
-    eyebrow: "Akram Cherbane, freelance developer",
-    headA: "Business software, built ",
-    headAccent: "end to end.",
-    sub: "Full-stack and AI engineer building web, mobile and back-office systems for real companies.",
-    ctaWork: "See my work",
-    ctaContact: "Contact me",
+    eyebrow: "Fares Nadji & Akram Cherbane",
+    headA: "Two engineers. ",
+    headAccent: "One whole system.",
+    sub: "Fares builds the intelligence: models, computer vision and AI agents. Akram builds the software around it: web, mobile and back office. Together we take a product from the first dataset to production.",
+    ctaWork: "See our work",
+    ctaContact: "Contact us",
     frameLabel: "ConstraOps, company back office",
     frameAlt:
       "ConstraOps dashboard with open contracts, unpaid invoices, site progress with budget rings and a map of active sites",
     phoneAlt: "ConstraOps field app home with the site of the day, progress, team and machines",
+    byAkram: "Built by Akram",
+    byFares: "Workflow by Fares",
+    flowTitle: "n8n, live run",
+    flowRunning: "Running",
   },
-  tech: { aria: "Technologies I work with" },
+  tech: { aria: "Technologies we work with" },
+  duo: {
+    title: "Two halves of one team",
+    sub: "Same institute, same graduating year, complementary sides of the stack. We built ConstraOps together, and each of us has shipped our own work.",
+    nowLabel: "Now",
+    eduLabel: "Education",
+    focusLabel: "Focus",
+    people: {
+      fares: {
+        role: "AI / ML engineer",
+        bio: "I build the parts of a system that learn: deep learning models for medical imaging, LLM agents and RAG pipelines, and the automations that take repetitive work off people.",
+        now: "AI Automation Specialist at Window2theWorld LTD, and freelance automation and web projects.",
+        edu: "Bachelor's in Computer Science, option Artificial Intelligence and Autonomous Embedded Systems, Numidia Institute of Technology, 2025.",
+        focus: ["PyTorch", "LLMs", "RAG pipelines", "Computer vision", "MLOps", "Automation"],
+      },
+      akram: {
+        role: "Full-stack & AI developer",
+        bio: "I design, build and deploy the whole application: ERP, CRM, HR, finance and stock software, web and mobile, from the first schema to production.",
+        now: "Freelance full-stack and AI developer since October 2025.",
+        edu: "Bachelor's in Computer Science, option Artificial Intelligence and Embedded Systems, Numidia Institute of Technology, 2025.",
+        focus: ["Flutter", "Python", "Node.js", "NestJS", "PostgreSQL", "Docker"],
+        certs: "IBM certifications, 2026",
+      },
+    },
+    email: "Email",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+  },
   work: {
-    title: "Selected work",
-    sub: "Construction and fuel-distribution platforms, a fitness app, and the AI projects from my degree.",
-    more: "More projects",
+    togetherTitle: "Built together",
+    togetherSub: "The product we co-founded: Akram built the platform, Fares shaped the product and owns its AI side.",
+    faresTitle: "Fares Nadji",
+    faresSub: "AI / ML: medical image segmentation, an AI support agent, automation and security.",
+    akramTitle: "Akram Cherbane",
+    akramSub: "Full-stack: a fuel-distribution ERP, a fitness app and a face recognition access system.",
+    more: "In progress",
     valueLabel: "Added value",
+    creditsLabel: "Who did what",
+    code: "Code on GitHub",
   },
   cops: {
     intro:
-      "An ERP for Algerian construction companies, from tender preparation to site tracking and equipment management. Three products share one API: the company back office, a supplier marketplace and an offline-capable Flutter field app. Built as the label prototype for the national Projet Innovant application, co-founded with Fares Nadji.",
+      "An ERP for Algerian construction companies, from tender preparation to site tracking and equipment management. Three products share one API: the company back office, a supplier marketplace and an offline-capable Flutter field app. Built as the label prototype for the national Projet Innovant application.",
+    credits: [
+      { who: "Akram", what: "Built the platform: the API, the company back office, the supplier marketplace and the Flutter field app." },
+      { who: "Fares", what: "Co-founded it: shaped the product and owns its AI side, starting with OCR-assisted data entry." },
+    ],
     value:
       "Built to cut the days of manual work behind a tender dossier: data is entered once and reused from one tender to the next, documents are read by OCR instead of retyped, official documents such as the G50 are generated from the data, and management gets one view of sites, staff, machines and money.",
     tabsAria: "ConstraOps web screens",
@@ -265,31 +310,89 @@ export const en = {
     roomsAlt: "Attendify rooms dashboard listing monitored rooms with an add room tile",
     addAlt: "Attendify form for registering a new person with role and access level",
   },
-  more: {
-    health: {
-      tag: "Team project of five, Numidia Institute of Technology",
-      p1: "A symptom-based diagnosis chatbot. The Flutter app has sign-in and a chat with separate conversations. The model behind it is a bagged ensemble of random forests over TF-IDF features, which reached 84% accuracy on its test set.",
-      p2: "The model was trained and evaluated separately and is described in our paper and requirements specification. In the app's repository the chat is still an interface without the model connected.",
-      value:
-        "A first orientation for the general public: from a few symptoms, a probable diagnosis, an explanation and, when needed, a pointer to emergency care. It supports a visit to a doctor and does not replace one.",
-      alts: {
-        login: "HealthMate sign-in screen with email and password fields on a teal gradient",
-        chat: "HealthMate chat screen with a message field on a blue gradient",
-        drawer: "HealthMate conversation drawer listing separate conversations and a button to start a new one",
-      },
+  mamba: {
+    tag: "Bachelor's dissertation, Numidia Institute of Technology, 2024-2025, with Nemdil Amira and Benziada Moncef",
+    lead: "An AI model for cardiologists that outlines the left ventricle on echocardiography frames. That outline is what the ejection fraction is computed from, one of the key measures for detecting heart disease.",
+    body: "We first replicated five reference architectures from their papers on the CAMUS dataset: UNet, DeepLabV3, nnU-Net, GUDU and TransUNet. Then we replaced TransUNet's Transformer encoder with Mamba state-space layers, a new architecture that keeps the accuracy at a fraction of the cost.",
+    value:
+      "Segmentation light enough for the ultrasound machine or a mobile device rather than a GPU server: 94% smaller and almost twice as fast as TransUNet, with an ejection fraction within 1.4 points.",
+    highlights: [
+      { value: "-94%", label: "model size" },
+      { value: "1.8×", label: "faster per frame" },
+    ],
+    tableTitle: "TransUNet against Mamba-TransUNet",
+    colMetric: "Measure",
+    rows: [
+      { metric: "Model size", before: "2.37 GB", after: "131 MB" },
+      { metric: "Inference per frame", before: "0.336 s", after: "0.186 s" },
+      { metric: "Training time", before: "14 h", after: "10 h" },
+      { metric: "Dice score", before: "0.951", after: "0.935" },
+      { metric: "Ejection fraction", before: "56.8%", after: "55.4%" },
+    ],
+    archLabel: "Architecture: CNN encoder, 8 Mamba layers, upsampling decoder",
+    archAlt:
+      "Mamba-TransUNet architecture: an echocardiography frame goes through a CNN encoder, eight Mamba layers, then a decoder with skip connections that outputs the left ventricle mask",
+  },
+  support: {
+    title: "Customer-support AI agent",
+    tag: "Window2theWorld LTD, AI Automation Specialist",
+    text: "My most impactful build in my current role: an AI agent working alongside the customer-support team.",
+    stat: "-66%",
+    statLabel: "ticket handling time",
+  },
+  ddos: {
+    title: "AI DDoS mitigation",
+    tag: "Internship, Ministry of Finance, Algeria. Built in one month",
+    text: "A syslog server receives FortiGate traffic logs, turns each connection into features (duration, bytes sent and received, port) and scores it with an Isolation Forest anomaly model. A traffic simulator replays normal traffic and DDoS bursts to test it.",
+  },
+  automations: {
+    title: "Workflow automations",
+    tag: "Freelance, Make.com then n8n",
+    text: "33 production automations that take repetitive work off people, from the first lead to the paid invoice. Each one ran on Make.com first and was rebuilt on n8n in 2026, with Claude doing the reading and the writing. Eight of them are below, drawn from their real node graphs.",
+    results: [
+      { value: "$80k+", label: "saved across three software companies, with support automation and AI agents" },
+      { value: "15 h", label: "saved every week at each of those three companies" },
+      { value: "12 h", label: "saved every week for an SEO agency, with automated reporting" },
+    ],
+    listAria: "Choose an automation",
+    outcomeLabel: "What it produces",
+    scrollHint: "Scroll the graph sideways",
+    categories: {
+      "lead-gen": "Lead generation",
+      onboarding: "Client onboarding",
+      sales: "Sales",
+      content: "Content",
+      ops: "Operations",
     },
+    families: { trigger: "Trigger", ai: "Model", data: "Data", out: "Send", logic: "Logic", http: "API" },
+    edgeLabels: {
+      true: "yes",
+      false: "no",
+      Hourly: "Hourly",
+      "Fixed price": "Fixed price",
+      Project: "Project",
+      Salaried: "Salaried",
+      "Long-form": "Long-form",
+    },
+    builds,
+  },
+  more: {
     crm: {
       title: "Production and distribution CRM",
-      text: "In progress. Starting from the PostgreSQL infrastructure.",
+      text: "In progress, by Akram. Starting from the PostgreSQL infrastructure.",
     },
   },
   practice: {
-    title: "How I build",
-    sub: "Habits that show up in every project above.",
+    title: "How we build",
+    sub: "Habits that show up in the projects above.",
     items: [
       {
         title: "Start from the data",
         body: "Schemas are designed first, in Prisma and PostgreSQL. In ConstraOps every business row belongs to an organisation, so one deployment can serve many companies without their data ever mixing.",
+      },
+      {
+        title: "Reproduce before you improve",
+        body: "Mamba-TransUNet started by rebuilding five published architectures on one dataset and matching their reported scores. Only then did we change the design, so every gain is measured against a baseline we trust.",
       },
       {
         title: "Give each user their own app",
@@ -297,35 +400,26 @@ export const en = {
       },
       {
         title: "Enforce access where the data lives",
-        body: "Hiding a button is not security. ConstraOps puts role, plan and module guards in the API, and TRG writes one role-based permission matrix that the API enforces and the web app reuses to show only what a user may do.",
+        body: "Hiding a button is not security. ConstraOps puts role, plan and module guards in the API, and TRG writes one role-based permission matrix that the API enforces and the web app reuses.",
       },
       {
-        title: "Work without a signal",
-        body: "Site workers are not always online. The ConstraOps field app keeps an offline queue and syncs it when the connection comes back.",
-      },
-      {
-        title: "Write it down before building it",
-        body: "Requirements specifications and data-model documents come first. ConstraOps and HealthMate both started from a written SRS, and the ConstraOps data model is documented table by table.",
+        title: "Automate the repetitive part",
+        body: "If a person copies the same data between the same tools every day, it becomes a workflow: invoices, hiring, onboarding and support tickets are handled by automations and agents, and people keep the decisions.",
       },
       {
         title: "Ship it, and keep notes",
-        body: "Docker Compose, a reverse proxy, backups and a deployment log. ConstraOps runs on a VPS, and the steps to rebuild it are written down.",
+        body: "Docker Compose, a reverse proxy, backups and a deployment log. ConstraOps runs on a VPS, the steps to rebuild it are written down, and the requirements came first in a written SRS.",
       },
     ],
   },
-  about: {
-    heading: "I design, build and deploy the whole system.",
-    p1: "Since October 2025 I have worked as a freelance full-stack and AI developer, building web and mobile applications and custom management software: ERP, CRM, HR, finance and stock. On the AI side that means RAG systems, model fine-tuning, computer vision and automation.",
-    p2: "I work with Flutter, Python, Node.js, NestJS, PostgreSQL and Docker, from the first schema to production. I hold a Bachelor's degree in Computer Science, option Artificial Intelligence and Embedded Systems, from the Numidia Institute of Technology.",
-    certs: "IBM certifications, 2026",
-  },
   contact: {
     heading: "Have a system that needs building?",
-    text: "Tell me what your company runs on today and what is slowing it down.",
-    cta: "Contact me",
-    github: "GitHub",
+    text: "Tell us what your company runs on today and what is slowing it down. Write to one of us, or to both.",
+    ctaFares: "Email Fares",
+    ctaAkram: "Contact Akram",
+    linkedin: "Fares on LinkedIn",
   },
-  footer: { copyright: "© 2026 Akram Cherbane", top: "Back to top" },
+  footer: { copyright: "© 2026 Fares Nadji & Akram Cherbane", top: "Back to top" },
 };
 
 export type Content = typeof en;

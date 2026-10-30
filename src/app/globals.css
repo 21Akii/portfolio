@@ -158,6 +158,15 @@ body {
   );
 }
 
+/* The workflow canvas: an unmasked dot grid, like the n8n editor it is drawn from. */
+.canvas-dots {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--fg) var(--m-dots), transparent) 1px,
+    transparent 1.3px
+  );
+  background-size: 20px 20px;
+}
+
 /* Fixed, non-scrolling film grain: depth without repainting scroll containers. */
 .grain::after {
   content: "";

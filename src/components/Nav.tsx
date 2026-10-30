@@ -1,12 +1,14 @@
 import { ThemeToggle } from "./ThemeToggle";
-import { contactExternal, contactHref } from "../lib/site";
+import { contactHref, site } from "../lib/site";
 import type { Content } from "../content";
 
 export function Nav({ c }: { c: Content["nav"] }) {
   const links = [
-    { href: "#work", label: c.work },
+    { href: "#duo", label: c.duo },
+    { href: "#together", label: c.together },
+    { href: "#fares", label: c.fares },
+    { href: "#akram", label: c.akram },
     { href: "#practice", label: c.practice },
-    { href: "#about", label: c.about },
   ];
 
   return (
@@ -15,14 +17,20 @@ export function Nav({ c }: { c: Content["nav"] }) {
         aria-label={c.aria}
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8"
       >
-        <a href="#top" className="flex items-center gap-2.5 font-medium tracking-tight">
-          <span className="grid size-8 place-items-center rounded-full bg-accent text-sm font-semibold text-on-accent">
-            AC
+        <a href="#top" aria-label={site.name} className="flex items-center gap-2.5 font-medium tracking-tight">
+          {/* Monogram: two overlapping discs, one per person, the same pairing as the owner badges. */}
+          <span aria-hidden className="flex -space-x-2.5">
+            <span className="grid size-8 place-items-center rounded-full bg-accent text-[11px] font-semibold text-on-accent ring-2 ring-bg">
+              N
+            </span>
+            <span className="grid size-8 place-items-center rounded-full bg-fg text-[11px] font-semibold text-bg ring-2 ring-bg">
+              C
+            </span>
           </span>
-          <span className="hidden sm:inline">Akram Cherbane</span>
+          <span className="hidden sm:inline">{site.name}</span>
         </a>
 
-        <ul className="hidden items-center gap-8 text-sm text-muted md:flex">
+        <ul className="hidden items-center gap-7 text-sm text-muted lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="transition hover:text-fg">
@@ -44,7 +52,6 @@ export function Nav({ c }: { c: Content["nav"] }) {
           <ThemeToggle toLight={c.toLight} toDark={c.toDark} />
           <a
             href={contactHref}
-            {...(contactExternal ? { target: "_blank", rel: "noreferrer" } : {})}
             className="inline-flex h-10 items-center rounded-full bg-fg px-5 text-sm font-medium text-bg transition hover:opacity-90 active:scale-[0.98]"
           >
             {c.contact}

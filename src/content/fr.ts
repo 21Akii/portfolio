@@ -1,21 +1,24 @@
 // Contenu français (langue par défaut). Doit avoir exactement la même forme que `en.ts`.
 // Les espaces insécables avant : ; ? ! % sont ajoutées automatiquement dans `index.ts`.
 import type { Content } from "./en";
+import { builds } from "./automations-fr";
 
 export const fr: Content = {
   htmlLang: "fr",
   meta: {
-    title: "Akram Cherbane | Développeur full-stack & IA",
+    title: "Nadji & Cherbane | Duo IA et full-stack",
     description:
-      "Portfolio d'Akram Cherbane, développeur full-stack et IA freelance : des ERP pour le BTP et la distribution de carburant, une application de sport et un système de contrôle d'accès par reconnaissance faciale.",
-    ogDescription: "Des logiciels métier conçus de bout en bout : web, mobile, back-office et IA.",
+      "Portfolio de Fares Nadji (ingénieur IA / ML) et Akram Cherbane (développeur full-stack & IA) : segmentation d'images médicales, agents IA et automatisation, et ERP pour le BTP et la distribution de carburant.",
+    ogDescription: "Deux ingénieurs, un système complet : les modèles, et le logiciel autour.",
   },
   nav: {
     aria: "Navigation principale",
-    work: "Projets",
+    duo: "Le duo",
+    together: "Ensemble",
+    fares: "Fares",
+    akram: "Akram",
     practice: "Méthode",
-    about: "À propos",
-    contact: "Me contacter",
+    contact: "Nous contacter",
     toLight: "Passer au thème clair",
     toDark: "Passer au thème sombre",
     switchLabel: "EN",
@@ -23,28 +26,69 @@ export const fr: Content = {
     switchHref: "/en/",
   },
   hero: {
-    eyebrow: "Akram Cherbane, développeur freelance",
-    headA: "Des logiciels métier, ",
-    headAccent: "de bout en bout.",
-    sub: "Ingénieur full-stack et IA, je conçois des systèmes web, mobiles et de gestion pour de vraies entreprises.",
-    ctaWork: "Voir mes projets",
-    ctaContact: "Me contacter",
+    eyebrow: "Fares Nadji & Akram Cherbane",
+    headA: "Deux ingénieurs. ",
+    headAccent: "Un système complet.",
+    sub: "Fares construit l'intelligence : modèles, vision par ordinateur et agents IA. Akram construit le logiciel autour : web, mobile et back-office. Ensemble, nous menons un produit du premier jeu de données jusqu'à la production.",
+    ctaWork: "Voir nos projets",
+    ctaContact: "Nous contacter",
     frameLabel: "ConstraOps, back-office de l'entreprise",
     frameAlt:
       "Tableau de bord ConstraOps avec les marchés en cours, les factures impayées, l'avancement des chantiers avec anneaux de budget et une carte des chantiers actifs",
     phoneAlt:
       "Accueil de l'application terrain ConstraOps avec le chantier du jour, l'avancement, l'équipe et les engins",
+    byAkram: "Construit par Akram",
+    byFares: "Workflow de Fares",
+    flowTitle: "n8n, en direct",
+    flowRunning: "En cours",
   },
-  tech: { aria: "Technologies que j'utilise" },
+  tech: { aria: "Technologies que nous utilisons" },
+  duo: {
+    title: "Deux moitiés d'une même équipe",
+    sub: "Même institut, même promotion, deux côtés complémentaires de la technique. Nous avons construit ConstraOps ensemble, et chacun a livré ses propres projets.",
+    nowLabel: "Aujourd'hui",
+    eduLabel: "Formation",
+    focusLabel: "Spécialités",
+    people: {
+      fares: {
+        role: "Ingénieur IA / ML",
+        bio: "Je construis les parties d'un système qui apprennent : des modèles de deep learning pour l'imagerie médicale, des agents LLM et des pipelines RAG, et les automatisations qui libèrent les équipes du travail répétitif.",
+        now: "AI Automation Specialist chez Window2theWorld LTD, et projets freelance d'automatisation et de développement web.",
+        edu: "Licence en informatique, option Intelligence artificielle et systèmes embarqués autonomes, Numidia Institute of Technology, 2025.",
+        focus: ["PyTorch", "LLM", "Pipelines RAG", "Vision par ordinateur", "MLOps", "Automatisation"],
+      },
+      akram: {
+        role: "Développeur full-stack & IA",
+        bio: "Je conçois, construis et déploie l'application entière : ERP, CRM, RH, finance et stock, sur le web et le mobile, du premier schéma jusqu'à la production.",
+        now: "Développeur full-stack et IA freelance depuis octobre 2025.",
+        edu: "Licence en informatique, option Intelligence artificielle et systèmes embarqués, Numidia Institute of Technology, 2025.",
+        focus: ["Flutter", "Python", "Node.js", "NestJS", "PostgreSQL", "Docker"],
+        certs: "Certifications IBM, 2026",
+      },
+    },
+    email: "E-mail",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+  },
   work: {
-    title: "Projets",
-    sub: "Des plateformes pour le BTP et la distribution de carburant, une application de sport et les projets d'IA de mes études.",
-    more: "Autres projets",
+    togetherTitle: "Construit ensemble",
+    togetherSub: "Le produit que nous avons cofondé : Akram a construit la plateforme, Fares a façonné le produit et porte son volet IA.",
+    faresTitle: "Fares Nadji",
+    faresSub: "IA / ML : segmentation d'images médicales, un agent IA de support client, automatisation et sécurité.",
+    akramTitle: "Akram Cherbane",
+    akramSub: "Full-stack : un ERP de distribution de carburant, une application de sport et un contrôle d'accès par reconnaissance faciale.",
+    more: "En cours",
     valueLabel: "Valeur ajoutée",
+    creditsLabel: "Qui a fait quoi",
+    code: "Code sur GitHub",
   },
   cops: {
     intro:
-      "Un ERP pour les entreprises algériennes du BTP, de la préparation des appels d'offres au suivi des chantiers et à la gestion du matériel. Trois produits partagent la même API : le back-office de l'entreprise, une marketplace fournisseurs et une application terrain Flutter qui fonctionne hors ligne. Réalisé comme prototype pour le dossier de labellisation Projet Innovant, avec Fares Nadji, cofondateur.",
+      "Un ERP pour les entreprises algériennes du BTP, de la préparation des appels d'offres au suivi des chantiers et à la gestion du matériel. Trois produits partagent la même API : le back-office de l'entreprise, une marketplace fournisseurs et une application terrain Flutter qui fonctionne hors ligne. Réalisé comme prototype pour le dossier de labellisation Projet Innovant.",
+    credits: [
+      { who: "Akram", what: "A construit la plateforme : l'API, le back-office de l'entreprise, la marketplace fournisseurs et l'application terrain Flutter." },
+      { who: "Fares", what: "L'a cofondé : a façonné le produit et porte son volet IA, à commencer par la saisie assistée par OCR." },
+    ],
     value:
       "Conçu pour réduire les jours de travail manuel d'un dossier d'appel d'offres : les données sont saisies une fois et réutilisées d'un marché à l'autre, les documents sont lus par OCR au lieu d'être ressaisis, les documents officiels comme la G50 sont générés à partir des données, et la direction dispose d'une vue unique des chantiers, du personnel, du matériel et de l'argent.",
     tabsAria: "Écrans web de ConstraOps",
@@ -272,31 +316,89 @@ export const fr: Content = {
     roomsAlt: "Tableau de bord des salles d'Attendify listant les salles surveillées avec une tuile d'ajout",
     addAlt: "Formulaire d'Attendify pour enregistrer une nouvelle personne avec son rôle et son niveau d'accès",
   },
-  more: {
-    health: {
-      tag: "Projet d'équipe de cinq, Numidia Institute of Technology",
-      p1: "Un chatbot de diagnostic à partir des symptômes. L'application Flutter propose la connexion et un chat à conversations séparées. Le modèle qui la sous-tend est un ensemble de forêts aléatoires (bagging) sur des caractéristiques TF-IDF, qui a atteint 84 % de précision sur son jeu de test.",
-      p2: "Le modèle a été entraîné et évalué séparément ; il est décrit dans notre article scientifique et notre cahier des charges. Dans le dépôt de l'application, le chat reste une interface sans le modèle connecté.",
-      value:
-        "Une première orientation pour le grand public : à partir de quelques symptômes, un diagnostic probable, une explication et, si besoin, une orientation vers les urgences. Elle accompagne une consultation et ne la remplace pas.",
-      alts: {
-        login: "Écran de connexion de HealthMate avec champs e-mail et mot de passe sur un dégradé turquoise",
-        chat: "Écran de chat de HealthMate avec un champ de message sur un dégradé bleu",
-        drawer: "Tiroir des conversations de HealthMate listant des conversations séparées et un bouton pour en démarrer une nouvelle",
-      },
+  mamba: {
+    tag: "Mémoire de licence, Numidia Institute of Technology, 2024-2025, avec Nemdil Amira et Benziada Moncef",
+    lead: "Un modèle d'IA pour les cardiologues qui délimite le ventricule gauche sur les images d'échocardiographie. Ce contour sert à calculer la fraction d'éjection, l'une des mesures clés pour détecter une maladie cardiaque.",
+    body: "Nous avons d'abord reproduit cinq architectures de référence à partir de leurs articles, sur le jeu de données CAMUS : UNet, DeepLabV3, nnU-Net, GUDU et TransUNet. Puis nous avons remplacé l'encodeur Transformer de TransUNet par des couches à espace d'états Mamba : une nouvelle architecture qui garde la précision pour une fraction du coût.",
+    value:
+      "Une segmentation assez légère pour tourner sur l'échographe ou un appareil mobile plutôt que sur un serveur GPU : 94 % plus petite et presque deux fois plus rapide que TransUNet, avec une fraction d'éjection à 1,4 point près.",
+    highlights: [
+      { value: "-94 %", label: "de taille de modèle" },
+      { value: "1,8×", label: "plus rapide par image" },
+    ],
+    tableTitle: "TransUNet face à Mamba-TransUNet",
+    colMetric: "Mesure",
+    rows: [
+      { metric: "Taille du modèle", before: "2,37 Go", after: "131 Mo" },
+      { metric: "Inférence par image", before: "0,336 s", after: "0,186 s" },
+      { metric: "Durée d'entraînement", before: "14 h", after: "10 h" },
+      { metric: "Score Dice", before: "0,951", after: "0,935" },
+      { metric: "Fraction d'éjection", before: "56,8 %", after: "55,4 %" },
+    ],
+    archLabel: "Architecture : encodeur CNN, 8 couches Mamba, décodeur",
+    archAlt:
+      "Architecture de Mamba-TransUNet : une image d'échocardiographie passe par un encodeur CNN, huit couches Mamba, puis un décodeur avec connexions résiduelles qui produit le masque du ventricule gauche",
+  },
+  support: {
+    title: "Agent IA de support client",
+    tag: "Window2theWorld LTD, AI Automation Specialist",
+    text: "Mon projet le plus marquant dans mon poste actuel : un agent IA qui travaille aux côtés de l'équipe de support client.",
+    stat: "-66 %",
+    statLabel: "de temps de traitement par ticket",
+  },
+  ddos: {
+    title: "Atténuation DDoS par IA",
+    tag: "Stage, ministère des Finances, Algérie. Réalisé en un mois",
+    text: "Un serveur syslog reçoit les journaux de trafic FortiGate, transforme chaque connexion en caractéristiques (durée, octets envoyés et reçus, port) et lui attribue un score avec un modèle de détection d'anomalies Isolation Forest. Un simulateur rejoue du trafic normal et des rafales DDoS pour le tester.",
+  },
+  automations: {
+    title: "Automatisations de processus",
+    tag: "Freelance, Make.com puis n8n",
+    text: "33 automatisations en production qui retirent le travail répétitif des équipes, du premier prospect à la facture payée. Chacune a d'abord tourné sur Make.com, puis a été reconstruite sur n8n en 2026, avec Claude pour lire et rédiger. En voici huit, dessinées à partir de leurs vrais graphes de nœuds.",
+    results: [
+      { value: "80 k$+", label: "économisés dans trois éditeurs de logiciels, grâce à l'automatisation du support et aux agents IA" },
+      { value: "15 h", label: "gagnées chaque semaine dans chacune de ces trois entreprises" },
+      { value: "12 h", label: "gagnées chaque semaine pour une agence SEO, grâce au reporting automatisé" },
+    ],
+    listAria: "Choisir une automatisation",
+    outcomeLabel: "Ce qu'elle produit",
+    scrollHint: "Faites défiler le graphe sur le côté",
+    categories: {
+      "lead-gen": "Prospection",
+      onboarding: "Onboarding client",
+      sales: "Vente",
+      content: "Contenu",
+      ops: "Opérations",
     },
+    families: { trigger: "Déclencheur", ai: "Modèle", data: "Données", out: "Envoi", logic: "Logique", http: "API" },
+    edgeLabels: {
+      true: "oui",
+      false: "non",
+      Hourly: "À l'heure",
+      "Fixed price": "Prix fixe",
+      Project: "Au projet",
+      Salaried: "Forfait",
+      "Long-form": "Article long",
+    },
+    builds,
+  },
+  more: {
     crm: {
       title: "CRM production et distribution",
-      text: "En cours. Point de départ : l'infrastructure PostgreSQL.",
+      text: "En cours, par Akram. Point de départ : l'infrastructure PostgreSQL.",
     },
   },
   practice: {
-    title: "Ma façon de construire",
-    sub: "Des habitudes présentes dans chaque projet ci-dessus.",
+    title: "Notre façon de construire",
+    sub: "Des habitudes présentes dans les projets ci-dessus.",
     items: [
       {
         title: "Partir des données",
         body: "Les schémas sont conçus en premier, avec Prisma et PostgreSQL. Dans ConstraOps, chaque ligne métier appartient à une organisation : un seul déploiement peut servir plusieurs entreprises sans que leurs données se mélangent.",
+      },
+      {
+        title: "Reproduire avant d'améliorer",
+        body: "Mamba-TransUNet a commencé par la reconstruction de cinq architectures publiées sur un même jeu de données, jusqu'à retrouver leurs scores. Ce n'est qu'ensuite que nous avons modifié l'architecture : chaque gain se mesure face à une référence fiable.",
       },
       {
         title: "Une application par utilisateur",
@@ -304,33 +406,24 @@ export const fr: Content = {
       },
       {
         title: "Contrôler l'accès là où sont les données",
-        body: "Masquer un bouton n'est pas de la sécurité. ConstraOps place des gardes de rôle, de formule et de module dans l'API, et TRG définit une matrice de permissions par rôle que l'API applique et que l'application web réutilise pour n'afficher que ce qu'un utilisateur peut faire.",
+        body: "Masquer un bouton n'est pas de la sécurité. ConstraOps place des gardes de rôle, de formule et de module dans l'API, et TRG définit une matrice de permissions par rôle que l'API applique et que l'application web réutilise.",
       },
       {
-        title: "Travailler sans réseau",
-        body: "Les ouvriers de chantier ne sont pas toujours connectés. L'application terrain de ConstraOps garde une file hors ligne et la synchronise au retour de la connexion.",
-      },
-      {
-        title: "L'écrire avant de le construire",
-        body: "Cahiers des charges et documents de modèle de données d'abord. ConstraOps et HealthMate sont partis d'un SRS écrit, et le modèle de données de ConstraOps est documenté table par table.",
+        title: "Automatiser la partie répétitive",
+        body: "Si quelqu'un recopie chaque jour les mêmes données entre les mêmes outils, cela devient un workflow : factures, recrutement, onboarding et tickets de support sont pris en charge par des automatisations et des agents, et les équipes gardent les décisions.",
       },
       {
         title: "Livrer, et garder des notes",
-        body: "Docker Compose, un reverse proxy, des sauvegardes et un journal de déploiement. ConstraOps tourne sur un VPS, et les étapes pour le reconstruire sont écrites.",
+        body: "Docker Compose, un reverse proxy, des sauvegardes et un journal de déploiement. ConstraOps tourne sur un VPS, les étapes pour le reconstruire sont écrites, et le cahier des charges est venu en premier.",
       },
     ],
   },
-  about: {
-    heading: "Je conçois, construis et déploie le système entier.",
-    p1: "Depuis octobre 2025, je travaille comme développeur full-stack et IA freelance, et je construis des applications web et mobiles et des logiciels de gestion sur mesure : ERP, CRM, RH, finance et stock. Côté IA, cela veut dire systèmes RAG, fine-tuning de modèles, vision par ordinateur et automatisation.",
-    p2: "Je travaille avec Flutter, Python, Node.js, NestJS, PostgreSQL et Docker, du premier schéma jusqu'à la production. Je suis titulaire d'une licence en informatique, option Intelligence artificielle et systèmes embarqués, du Numidia Institute of Technology.",
-    certs: "Certifications IBM, 2026",
-  },
   contact: {
     heading: "Un système à construire ?",
-    text: "Dites-moi sur quoi repose votre entreprise aujourd'hui et ce qui la ralentit.",
-    cta: "Me contacter",
-    github: "GitHub",
+    text: "Dites-nous sur quoi repose votre entreprise aujourd'hui et ce qui la ralentit. Écrivez à l'un de nous, ou aux deux.",
+    ctaFares: "Écrire à Fares",
+    ctaAkram: "Contacter Akram",
+    linkedin: "Fares sur LinkedIn",
   },
-  footer: { copyright: "© 2026 Akram Cherbane", top: "Retour en haut" },
+  footer: { copyright: "© 2026 Fares Nadji & Akram Cherbane", top: "Retour en haut" },
 };

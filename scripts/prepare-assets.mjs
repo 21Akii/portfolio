@@ -2,7 +2,8 @@
 // Sources: ./assets-src (copied from the projects) and the sibling project folders.
 // Run with: npm run assets
 import sharp from "sharp";
-import { mkdir, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,7 +26,9 @@ async function write(pipeline, name) {
 // starts at the very top edge and its bottom nav sits on the bottom edge. writePhone() adds a status-bar
 // zone on top and a home-indicator zone at the bottom, filled with the app's own edge colours, and records
 // what the <PhoneFrame> overlay needs (new size, and whether each edge is dark so icons stay readable).
-const phoneMeta = {};
+// Starts from the current file so a run without the sibling weGym folder keeps the weGym entries.
+const metaPath = path.join(root, "src", "lib", "phone-meta.json");
+const phoneMeta = existsSync(metaPath) ? JSON.parse(await readFile(metaPath, "utf8")) : {};
 
 async function edgeColor(buf, top, width, height) {
   const px = await sharp(buf)
@@ -64,9 +67,13 @@ async function writePhone(input, name, resizeWidth) {
   console.log("wrote", name, "(phone, safe area added)");
 }
 
-// weGym phone screenshots.
-for (const name of ["home", "workout", "stats", "plan"]) {
-  await writePhone(path.join(gym, `${name}.png`), `gym-${name}`, 640);
+// weGym phone screenshots (skipped when the sibling folder is not on this machine).
+if (existsSync(gym)) {
+  for (const name of ["home", "workout", "stats", "plan"]) {
+    await writePhone(path.join(gym, `${name}.png`), `gym-${name}`, 640);
+  }
+} else {
+  console.log("skipped weGym: ../weGym not found, keeping the images already in public/projects");
 }
 
 // ConstraOps: captured from the running label prototype (web app and Flutter field app, demo data).
@@ -114,15 +121,13 @@ for (const name of ["incident", "notifications"]) {
   await writePhone(path.join(src, "trg", `mobile-${name}.png`), `trg-m-${name}`);
 }
 
-// HealthMate: screens of the Flutter app (sign-in from the main branch, chat from the chat_bot branch).
-for (const name of ["login", "chat", "conversations"]) {
-  await writePhone(path.join(src, "healthmate", `mobile-${name}.png`), `healthmate-${name}`);
-}
+// Mamba-TransUNet: figures from the dissertation (NIT, 2024-2025), CAMUS dataset.
+await write(sharp(path.join(src, "mamba", "architecture.png")).resize({ width: 1800 }), "mamba-architecture");
 
 // Attendify desktop admin app.
 await write(sharp(path.join(src, "attendify", "rooms.jpg")).resize({ width: 1600 }), "attendify-rooms");
 await write(sharp(path.join(src, "attendify", "add-person.jpg")).resize({ width: 1600 }), "attendify-add-person");
 
 // Sizes and edge colours of every phone image, read by <PhoneFrame>.
-await writeFile(path.join(root, "src", "lib", "phone-meta.json"), JSON.stringify(phoneMeta, null, 2) + "\n");
+await writeFile(metaPath, JSON.stringify(phoneMeta, null, 2) + "\n");
 console.log("wrote src/lib/phone-meta.json");
