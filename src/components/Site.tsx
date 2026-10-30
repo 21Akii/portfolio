@@ -1,5 +1,5 @@
-import { About } from "./About";
 import { Contact } from "./Contact";
+import { Duo } from "./Duo";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
 import { Nav } from "./Nav";
@@ -14,11 +14,11 @@ export function Site({ lang }: { lang: Lang }) {
     <>
       <Nav c={c.nav} />
       <main>
-        <Hero c={c.hero} />
+        <Hero c={c.hero} automations={c.automations} />
         <TechStrip aria={c.tech.aria} />
+        <Duo c={c.duo} />
         <Work c={c} />
         <Practice c={c.practice} />
-        <About c={c.about} />
         <Contact c={c.contact} />
       </main>
       <Footer c={c.footer} />

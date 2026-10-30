@@ -1,31 +1,39 @@
 import { Attendify } from "./work/Attendify";
 import { ConstraOps } from "./work/ConstraOps";
+import { FaresMore } from "./work/FaresMore";
+import { MambaTransUNet } from "./work/MambaTransUNet";
 import { MoreProjects } from "./work/MoreProjects";
 import { TRG } from "./work/TRG";
 import { WeGym } from "./work/WeGym";
+import { Chapter } from "./Chapter";
 import { Reveal } from "./Reveal";
 import type { Content } from "../content";
 
+// Three parts: the product built together, then each person's own work.
 export function Work({ c }: { c: Content }) {
+  const v = c.work.valueLabel;
   return (
-    <section id="work" className="mx-auto max-w-7xl scroll-mt-20 px-5 py-28 md:px-8 md:py-40">
-      <Reveal>
-        <h2 className="text-4xl font-semibold tracking-tighter sm:text-5xl md:text-6xl">{c.work.title}</h2>
-        <p className="mt-4 max-w-[60ch] text-lg leading-relaxed text-muted">{c.work.sub}</p>
-      </Reveal>
+    <div id="work" className="mx-auto flex max-w-7xl flex-col gap-28 px-5 pb-28 md:gap-40 md:px-8 md:pb-40">
+      <Chapter id="together" who={["fares", "akram"]} title={c.work.togetherTitle} sub={c.work.togetherSub}>
+        <ConstraOps c={c.cops} valueLabel={v} creditsLabel={c.work.creditsLabel} />
+      </Chapter>
 
-      <div className="mt-20 flex flex-col gap-28 md:gap-40">
-        <ConstraOps c={c.cops} valueLabel={c.work.valueLabel} />
-        <TRG c={c.trg} valueLabel={c.work.valueLabel} />
-        <WeGym c={c.gym} valueLabel={c.work.valueLabel} />
-        <Attendify c={c.attendify} valueLabel={c.work.valueLabel} />
+      <Chapter id="fares" who={["fares"]} title={c.work.faresTitle} sub={c.work.faresSub}>
+        <MambaTransUNet c={c.mamba} valueLabel={v} codeLabel={c.work.code} />
+        <FaresMore c={c} />
+      </Chapter>
+
+      <Chapter id="akram" who={["akram"]} title={c.work.akramTitle} sub={c.work.akramSub}>
+        <TRG c={c.trg} valueLabel={v} />
+        <WeGym c={c.gym} valueLabel={v} />
+        <Attendify c={c.attendify} valueLabel={v} />
         <div>
           <Reveal>
             <h3 className="mb-8 text-3xl font-semibold tracking-tight sm:text-4xl">{c.work.more}</h3>
           </Reveal>
-          <MoreProjects c={c.more} valueLabel={c.work.valueLabel} />
+          <MoreProjects c={c.more} />
         </div>
-      </div>
-    </section>
+      </Chapter>
+    </div>
   );
 }

@@ -78,29 +78,5 @@
     "padBottom": 33,
     "topDark": false,
     "bottomDark": false
-  },
-  "/projects/healthmate-login.webp": {
-    "width": 390,
-    "height": 924,
-    "padTop": 47,
-    "padBottom": 33,
-    "topDark": true,
-    "bottomDark": false
-  },
-  "/projects/healthmate-chat.webp": {
-    "width": 390,
-    "height": 924,
-    "padTop": 47,
-    "padBottom": 33,
-    "topDark": true,
-    "bottomDark": true
-  },
-  "/projects/healthmate-conversations.webp": {
-    "width": 390,
-    "height": 924,
-    "padTop": 47,
-    "padBottom": 33,
-    "topDark": true,
-    "bottomDark": false
   }
 }

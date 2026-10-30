@@ -1,5 +1,5 @@
-import { ArrowUpRight, GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import { contactExternal, contactHref, site } from "../lib/site";
+import { ArrowUpRight, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
+import { akramContact, people } from "../lib/site";
 import { Reveal } from "./Reveal";
 import type { Content } from "../content";
 
@@ -19,11 +19,10 @@ export function Contact({ c }: { c: Content["contact"] }) {
           <p className="relative mt-5 max-w-[48ch] text-lg leading-snug">{c.text}</p>
           <div className="relative mt-10 flex flex-wrap items-center gap-3">
             <a
-              href={contactHref}
-              {...(contactExternal ? { target: "_blank", rel: "noreferrer" } : {})}
+              href={`mailto:${people.fares.email}`}
               className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#11140a] px-6 text-[15px] font-medium text-[#f3f4f0] transition active:scale-[0.98]"
             >
-              {c.cta}
+              {c.ctaFares}
               <ArrowUpRight
                 size={16}
                 weight="bold"
@@ -31,13 +30,25 @@ export function Contact({ c }: { c: Content["contact"] }) {
               />
             </a>
             <a
-              href={site.github}
+              href={akramContact.href}
+              {...(akramContact.external ? { target: "_blank", rel: "noreferrer" } : {})}
+              className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#11140a] px-6 text-[15px] font-medium text-[#f3f4f0] transition active:scale-[0.98]"
+            >
+              {c.ctaAkram}
+              <ArrowUpRight
+                size={16}
+                weight="bold"
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+            <a
+              href={people.fares.linkedin}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-12 items-center gap-2 rounded-full border border-on-accent/40 px-6 text-[15px] font-medium transition hover:bg-on-accent/10 active:scale-[0.98]"
             >
-              <GithubLogo size={18} weight="regular" />
-              {c.github}
+              <LinkedinLogo size={18} weight="regular" />
+              {c.linkedin}
             </a>
           </div>
         </div>

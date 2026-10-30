@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Chips } from "../Chips";
+import { Owner } from "../Owner";
 import { PhoneFrame } from "../Frames";
 import { Reveal } from "../Reveal";
 import { ScreenViewer, type ViewerShot } from "../ScreenViewer";
@@ -27,8 +28,16 @@ function RoleGroup({ title, roles }: { title: string; roles: string[] }) {
   );
 }
 
-// Six columns: OCR (6), field app (6), three tiles of two (compliance, equipment, stat), then access (6).
-export function ConstraOps({ c, valueLabel }: { c: Content["cops"]; valueLabel: string }) {
+// Credits split the joint work between the two of us. Six columns: OCR (6), field app (6), three tiles of two (compliance, equipment, stat), then access (6).
+export function ConstraOps({
+  c,
+  valueLabel,
+  creditsLabel,
+}: {
+  c: Content["cops"];
+  valueLabel: string;
+  creditsLabel: string;
+}) {
   const shots: ViewerShot[] = c.shots.map((s) => ({ ...s, src: SRC[s.id] }));
 
   return (
@@ -41,6 +50,17 @@ export function ConstraOps({ c, valueLabel }: { c: Content["cops"]; valueLabel: 
           items={["Next.js 16", "NestJS 10", "Flutter", "Prisma 5", "PostgreSQL 16", "Redis", "MinIO", "Docker"]}
         />
         <ValueNote label={valueLabel}>{c.value}</ValueNote>
+        <div className="mt-8 max-w-3xl">
+          <p className="text-sm text-muted">{creditsLabel}</p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {c.credits.map((cr) => (
+              <li key={cr.who} className="rounded-[20px] border border-line bg-surface p-5">
+                <Owner who={[cr.who === "Fares" ? "fares" : "akram"]} />
+                <p className="mt-3 text-sm leading-relaxed text-muted">{cr.what}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Reveal>
 
       <Reveal delay={0.1} className="mt-10">
